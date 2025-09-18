@@ -1,5 +1,5 @@
 # Projeto MongoDB com Spring Boot
-[![NPM](https://github.com/BotRajj/workshop-springboot-mongodb/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/BotRajj/workshop-springboot-mongodb/blob/main/LICENSE) 
 
 # Sobre o projeto
 
