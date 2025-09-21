@@ -3,8 +3,11 @@
 
 # Sobre o projeto
 
-Porjeto feito através do curso guiado pelo Prof. Dr. Nelio Alves
-Objetivo geral:
+Ainda em andamento. Esse é uma projeto web services, com Spring Boot e JPA/Hibernate construído em um dos cusros do professor Dr.Nelio Alves DevSuperior.
+
+O projeto consiste na implementação de algumas etapas Back End em um site com posts e comentários.
+
+# Objetivo geral:
    Compreender as principais diferenças entre paradigma orientado a documentos e relacional
    Implementar operações de CRUD
    Refletir sobre decisões de design para um banco de dados orientado a documentos
