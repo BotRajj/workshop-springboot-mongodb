@@ -39,11 +39,13 @@ Na criação de entidades e recursos, segui os seguintes passos:
   - hashCode e equals (implementação padrão: somente id)
   - Serializable (padrão: 1L)
 
-No arquivo Instantiation na pa sta Config, está o povoamento do banco de dados e a instanciação da base de dados.
+No arquivo Instantiation na pasta Config, está a instanciação da base de dados, também conhecida como carga inicial da base de dadoas, para fazer nossos testes. Assim que for iniciado, a aplicação apaga o que estiver salvo e logo após preenche com a carga.
 
 Para a camada de repositórios apenas extendi o org.springframework.data.mongodb.repository.MongoRepository e utilizei a anotação org.springframework.stereotype.Repository para cada serviço.
 
-Quem acessará o repositório e manter a lógica de negócio é a camada de serviço, que por sua vez é chamada na camada de recursos. Os recursos recebem a requisição, enviam pra camada de serviço que processa ou envia para o repositório, que então o resultado é retornado para a camada de recursos e enviada de volta para a aplicação.
+A camada que acessará o repositório e manterá a lógica de negócio é a de serviço, que por sua vez é chamada na camada de recursos. Os recursos recebem a requisição, enviam pra camada de serviço que processa ou envia para o repositório, que então o resultado é retornado para a camada de recursos e enviada de volta para a aplicação.
+
+Temos também na pasta DTO os objetos de transferência de dados de nossas entidades e dos comentários. São objetos que carregão dados de forma simples, servem para otimizar o tráfego e evitar a exposição de dados de interesse exclusivo.
 
 # Como executar o projeto
 
@@ -68,34 +70,27 @@ spring.data.mongodb.uri=mongodb://localhost:27017/cursenelio_workshop_mongo
 
 Utilizando o Postman, seguimos para as requisições.
 
-Esse projeto já está implementado no Heroku, sendo possível fazer as requisições com o caminho:
-- https://coure-javasb3-e46136a3d1e0.herokuapp.com
-
-Exemplo:  https://coure-javasb3-e46136a3d1e0.herokuapp.com/endpoint
-
-Ou utilize o caminho da sua implementação, caso já tenha.
-
-E para execução local, os profile test e dev utiliza o caminho padrão:
+E para execução local, utilizamos o caminho padrão:
 - http://localhost:8080
 
 Exemplo:  http://localhost:8080/endpoint
 
 ## Retornando todos os recursos.
-### /users, /product, /order, /category
+### /users, /pots
 
 Enviando com o método GET, essa requisição retorna todos os recurso de cada.
 
 ## Retornando um recurso específico
-### /users/id, /product/id, /order/id, category/id
+### /users/id, /post/id
 
 Enviando com o método GET, essa requisição retorna apenas um recurso espeficicado. 
 
 No caso do recurso não encontrado, o tratamento de exceções irá retorna 404 - Not found, a mensagem "Resource not found. Id + id" e um objeto de exceção manualmente tratado.
 
 Classes envolvidas no tratamento de exceções
-- NEW CLASS: services.exceptions.ResourceNotFoundException
-- NEW CLASS: resources.exceptions.StandardError
-- NEW CLASS: resources.exceptions.ResourceExceptionHandler
+- services.exceptions.ObjectNotFoundException
+- resources.exceptions.StandardError
+- resources.exceptions.ResourceExceptionHandler
 - ClasseServiceDoRecurso
 
 ## Criando um recurso
