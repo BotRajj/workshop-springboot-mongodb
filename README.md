@@ -5,7 +5,7 @@
 
 Ainda em andamento. Esse é uma projeto web services, com Spring Boot e MongoDB construído em um dos cursos do professor Dr.Nelio Alves DevSuperior.
 
-O projeto consiste na implementação de algumas etapas Back End em um site com posts e comentários.
+O projeto consiste na implementação Back End em um sistema com posts e comentários.
 
 # Objetivo geral:
   - Compreender as principais diferenças entre paradigma orientado a documentos e relacional
